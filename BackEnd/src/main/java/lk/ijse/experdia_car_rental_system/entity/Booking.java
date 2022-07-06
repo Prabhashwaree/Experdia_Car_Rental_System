@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -24,10 +23,17 @@ public class Booking {
     private String bookingStatus;
     private String driverStatus;
     private String picUpLocation;
-    private String lossDamagePrice;
+    private double lossDamagePrice;
     private String rent_Duration;
     private String car_Count;
 
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "nIC",referencedColumnName = "nIC_No",nullable = false)
+    private Customer customer;
+
+//    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+//    @JoinColumn(name = "pay_Id",referencedColumnName = "payment_Id",nullable = false)
+//    private Payment payment;
 
 }
 
