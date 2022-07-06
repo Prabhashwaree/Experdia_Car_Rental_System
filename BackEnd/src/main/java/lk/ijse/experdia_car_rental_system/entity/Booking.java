@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -31,9 +32,16 @@ public class Booking {
     @JoinColumn(name = "nIC",referencedColumnName = "nIC_No",nullable = false)
     private Customer customer;
 
-//    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-//    @JoinColumn(name = "pay_Id",referencedColumnName = "payment_Id",nullable = false)
-//    private Payment payment;
+    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinColumn(name = "pay_Id",referencedColumnName = "payment_Id",nullable = false)
+    private Payment payment;
 
+    //booking and car
+    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
+    private List<BookingDetails> bookingDetails;
+
+    //booking and driver
+    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
+    private List<DriverSchedule> driverSchedule;
 }
 
