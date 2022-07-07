@@ -21,7 +21,7 @@ public class Admin {
 
     @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "u_ID",referencedColumnName = "user_Id",nullable = false)
-    private UserLogin UserLogin;
+    private UserLogin userLogin;
 
 }
 
