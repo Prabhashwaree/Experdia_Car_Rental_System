@@ -37,11 +37,28 @@ public class Booking {
     private Payment payment;
 
     //booking and car
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<BookingDetails> bookingDetails;
 
-    //booking and driver
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
-    private List<DriverSchedule> driverSchedule;
+
+
+
+    public Booking(String booking_Id, String picUp_Date, String drop_Date, String picUp_Time, String drop_Time, String bookingStatus, String driverStatus, String picUpLocation, double lossDamagePrice, String rent_Duration, String car_Count, Customer customer, Payment payment) {
+        this.booking_Id = booking_Id;
+        this.picUp_Date = picUp_Date;
+        this.drop_Date = drop_Date;
+        this.picUp_Time = picUp_Time;
+        this.drop_Time = drop_Time;
+        this.bookingStatus = bookingStatus;
+        this.driverStatus = driverStatus;
+        this.picUpLocation = picUpLocation;
+        this.lossDamagePrice = lossDamagePrice;
+        this.rent_Duration = rent_Duration;
+        this.car_Count = car_Count;
+        this.customer = customer;
+        this.payment = payment;
+    }
+
+
 }
 
