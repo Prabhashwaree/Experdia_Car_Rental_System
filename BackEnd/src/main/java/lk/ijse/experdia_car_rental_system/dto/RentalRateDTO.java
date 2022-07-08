@@ -14,6 +14,7 @@ public class RentalRateDTO {
     private String rate_Id;
     private String date;
     private String time;
+    private String Brand;
     private String type;
     private String daily_Rate;
     private String free_KM_Day;
