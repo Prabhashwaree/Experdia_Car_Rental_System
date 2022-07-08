@@ -1,7 +1,6 @@
 package lk.ijse.experdia_car_rental_system.repo;
 
 import lk.ijse.experdia_car_rental_system.config.JPAConfig;
-import lk.ijse.experdia_car_rental_system.entity.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,49 +22,89 @@ public class BookingRepoTest {
 
     @Test
     public void saveBooking(){
-       Booking booking = new Booking(
-               "B001",
-                "2022-07-08",
-                "2022-07-09",
-                "8.00",
-                "4.00",
-                "confirm",
-                "No Driver",
-                "Panadura",
-                10000,
-                "1",
-                "1",
-               new Customer(
-                       "995687458V",
-                        "L5778",
-                        "Nethmini",
-                        "Kaluthara",
-                        "0779845875",
-                        "neth@gmail.com",
-                        "2022-07-08",
-                        "8.00",
-                       new UserLogin(
-                               "U001",
-                                "Admin",
-                                "Nethmini",
-                                "neth"
-                       )
-               ),
-               new Payment(
-                       "P001",
-                        "2022-07-08",
-                        "8.00",
-                        "400",
-                        "1500",
-                        "1100",
-                        "confirm",
-                        4000
-               )
-
-       );
 
 
-        bookingRepo.save(booking);
+
+
+//        Booking booking = new Booking(
+//                "B001",
+//                "2022-07-08",
+//                "2022-07-09",
+//                "8.00",
+//                "4.00",
+//                "confirm",
+//                "No Driver",
+//                "Panadura",
+//                10000,
+//                "1",
+//                "1",
+//                new Customer(
+//                        "995687458V",
+//                        "L5778",
+//                        "Nethmini",
+//                        "Kaluthara",
+//                        "0779845875",
+//                        "neth@gmail.com",
+//                        "2022-07-08",
+//                        "8.00",
+//                        new UserLogin(
+//                                "U001",
+//                                "Admin",
+//                                "Nethmini",
+//                                "neth"
+//                        )
+//                ),
+//                "",
+//                "",
+//                ""
+//
+//        );
+
+
+
+//       Booking booking = new Booking(
+//               "B001",
+//                "2022-07-08",
+//                "2022-07-09",
+//                "8.00",
+//                "4.00",
+//                "confirm",
+//                "No Driver",
+//                "Panadura",
+//                10000,
+//                "1",
+//                "1",
+//               new Customer(
+//                       "995687458V",
+//                        "L5778",
+//                        "Nethmini",
+//                        "Kaluthara",
+//                        "0779845875",
+//                        "neth@gmail.com",
+//                        "2022-07-08",
+//                        "8.00",
+//                       new UserLogin(
+//                               "U001",
+//                                "Admin",
+//                                "Nethmini",
+//                                "neth"
+//                       )
+//               ),
+//               new Payment(
+//                       "P001",
+//                        "2022-07-08",
+//                        "8.00",
+//                        "400",
+//                        "1500",
+//                        "1100",
+//                        "confirm",
+//                        4000
+//               )
+//
+//       );
+
+
+      //  bookingRepo.save(booking);
 
     }
 

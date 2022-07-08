@@ -25,63 +25,81 @@ public class DriverScheduleRepoTest {
 
     @Test
     public void saveDriverSchedule(){
-        DriverSchedule driverSchedule1 = new DriverSchedule(
-                new Booking(
-                        "B001",
-                        "2022-07-08",
-                        "2022-07-09",
-                        "8.00",
-                        "4.00",
-                        "confirm",
-                        "No Driver",
-                        "Panadura",
-                        10000,
-                        "1",
-                        "1",
-                        new Customer(
-                                "995687458V",
-                                "L5778",
-                                "Nethmini",
-                                "Kaluthara",
-                                "0779845875",
-                                "neth@gmail.com",
-                                "2022-07-08",
-                                "8.00",
-                                new UserLogin(
-                                        "U001",
-                                        "Admin",
-                                        "Nethmini",
-                                        "neth"
-                                )
-                        ),
-                        new Payment(
-                                "P001",
-                                "2022-07-08",
-                                "8.00",
-                                "400",
-                                "1500",
-                                "1100",
-                                "confirm",
-                                4000
-                        )
-                ),
-                new Driver(
-                        "995867816V",
-                        "2022-07-08",
-                        "4.00",
-                        "L2548",
-                        "neth",
-                        "panadura",
-                        "0785548765",
-                        "25000"
-                ),
-                "2022-07-08",
-                "4.00",
-                "Active",
-                "",
-                ""
-        );
-        driverScheduleRepo.save(driverSchedule1);
+//        DriverSchedule driverSchedule = new DriverSchedule(
+//                "B001",
+//                "995867816V",
+//                "2022-07-08",
+//                "8.00",
+//                "Comfirm",
+//                new Booking(
+//                        "B001",
+//                        "2022-07-08",
+//                        "2022-07-09",
+//                        "8.00",
+//                        "4.00",
+//                        "confirm",
+//                        "No Driver",
+//                        "Panadura",
+//                        10000,
+//                        "1",
+//                        "1",
+//                        new Customer(
+//                                "995687458V",
+//                                "L5778",
+//                                "Nethmini",
+//                                "Kaluthara",
+//                                "0779845875",
+//                                "neth@gmail.com",
+//                                "2022-07-08",
+//                                "8.00",
+//                                new UserLogin(
+//                                        "U001",
+//                                        "Admin",
+//                                        "Nethmini",
+//                                        "neth"
+//                                )
+//                        ),
+//                        new Payment(
+//                                "P001",
+//                                "2022-07-08",
+//                                "8.00",
+//                                "400",
+//                                "1500",
+//                                "1100",
+//                                "confirm",
+//                                4000
+//                        ),
+//                        new BookingDetails(
+//                                "B001",
+//                                "C001",
+//                                "2022-07-08",
+//                                "8.00",
+//                                new Booking(
+//                                        "B001",
+//                                        "2022-07-08",
+//                                        "2022-07-09",
+//                                        "8.00",
+//                                        "4.00",
+//                                        "confirm",
+//                                        "No Driver",
+//                                        "Panadura",
+//                                        10000,
+//                                        "1",
+//                                        "1",
+//                                        "",
+//                                        "",
+//                                        ""
+//                                ),
+//                                ""
+//                        )
+//                ),
+//                ""
+//
+//        );
+//
+//
+//
+//        driverScheduleRepo.save(driverSchedule);
 
     }
 
