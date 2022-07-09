@@ -37,12 +37,12 @@ public class Booking {
     private Payment payment;
 
     //booking and car
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
     private List<BookingDetails> bookingDetails;
 
 
     //booking and driver
-    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "booking",cascade = CascadeType.ALL)
     private List<DriverSchedule> driverSchedule;
 
 

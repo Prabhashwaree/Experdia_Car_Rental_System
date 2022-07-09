@@ -27,8 +27,10 @@ public class BookingDTO {
     private double lossDamagePrice;
     private String rent_Duration;
     private String car_Count;
+
     private Customer customer;
     private Payment payment;
-    private List<BookingDetailsDTO> bookingDetailsDTO;
 
+    private List<BookingDetailsDTO> bookingDetailsDTO;
+    private List<DriverScheduleDTO> driverScheduleDTO;
 }
