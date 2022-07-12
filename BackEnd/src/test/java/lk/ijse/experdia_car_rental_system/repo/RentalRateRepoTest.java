@@ -23,7 +23,18 @@ public class RentalRateRepoTest {
 
     @Test
     public void saveRentalRate(){
-        RentalRate rentalRate1 = new RentalRate("R001", "2022-07-08", "4.00","Genaral", "Suzuki Alto","2500","100", "2400","64,350.00","30.00");
+        RentalRate rentalRate1 = new RentalRate(
+                "R001",
+                "2022-07-08",
+                "4.00",
+                "Genaral",
+                "Suzuki Alto",
+                "2500",
+                "100",
+                "2400",
+                "64,350.00",
+                "30.00"
+        );
         RentalRate rentalRate2 = new RentalRate("R002", "2022-07-09", "6.00","Premium Cars", "Toyota","5500","100", "120,330.00","2400","49.50");
         rentalRateRepo.save(rentalRate1);
         rentalRateRepo.save(rentalRate2);

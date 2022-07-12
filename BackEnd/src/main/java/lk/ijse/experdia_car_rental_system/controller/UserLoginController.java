@@ -18,9 +18,11 @@ public class UserLoginController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil saveUserLogin(@ModelAttribute UserLoginDTO userLoginDTO){
+    public ResponceUtil saveUserLogin(@RequestBody UserLoginDTO userLoginDTO){//@ModelAttribute danna ona
         userLoginService.saveUserLogin(userLoginDTO);
-        return new ResponceUtil(200,"save",null);
+        return new ResponceUtil(200,"save",HttpStatus.CREATED);
+
+
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -28,8 +30,9 @@ public class UserLoginController {
         return  new ResponceUtil(200,"getAll",userLoginService.getAllUserLogin());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deleteUserLogin(@RequestParam String id){
+    @ResponseStatus(HttpStatus.CREATED)
+    @DeleteMapping(params = {"user_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deleteUserLogin(@RequestParam("user_Id") String id){
         userLoginService.deleteUserLogin(id);
         return new ResponceUtil(200,"deleted",null);
     }

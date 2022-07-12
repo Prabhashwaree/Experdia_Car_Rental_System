@@ -18,7 +18,7 @@ public class RentalRateController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil saveRentalRate(@ModelAttribute RentalRateDTO rentalRateDTO){
+    public ResponceUtil saveRentalRate(@RequestBody RentalRateDTO rentalRateDTO){
         rentalRateService.saveRentalRate(rentalRateDTO);
         return new ResponceUtil(200,"save",null);
     }
@@ -28,8 +28,8 @@ public class RentalRateController {
         return  new ResponceUtil(200,"getAll",rentalRateService.getAllRentalRate());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deleteRentalRate(@RequestParam String id){
+    @DeleteMapping(params = {"rate_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deleteRentalRate(@RequestParam("rate_Id") String id){
         rentalRateService.deleteRentalRate(id);
         return new ResponceUtil(200,"deleted",null);
     }

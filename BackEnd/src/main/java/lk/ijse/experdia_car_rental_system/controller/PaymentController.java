@@ -18,7 +18,7 @@ public class PaymentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil savePayment(@ModelAttribute PaymentDTO paymentDTO){
+    public ResponceUtil savePayment(@RequestBody PaymentDTO paymentDTO){
         paymentService.savePayment(paymentDTO);
         return new ResponceUtil(200,"save",null);
     }
@@ -28,8 +28,8 @@ public class PaymentController {
         return  new ResponceUtil(200,"getAll",paymentService.getAllPayment());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deletePayment(@RequestParam String id){
+    @DeleteMapping(params = {"payment_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deletePayment(@RequestParam("payment_Id") String id){
         paymentService.deletePayment(id);
         return new ResponceUtil(200,"deleted",null);
     }

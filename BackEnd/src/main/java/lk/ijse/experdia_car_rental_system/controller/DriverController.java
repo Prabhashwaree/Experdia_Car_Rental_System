@@ -18,7 +18,7 @@ public class DriverController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil saveDriver(@ModelAttribute DriverDTO driverDTO){
+    public ResponceUtil saveDriver(@RequestBody DriverDTO driverDTO){
         driverService.saveDriver(driverDTO);
         return new ResponceUtil(200,"save",null);
     }
@@ -28,8 +28,8 @@ public class DriverController {
         return  new ResponceUtil(200,"getAll",driverService.getAllDriver());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deleteDriver(@RequestParam String id){
+    @DeleteMapping(params = {"driver_NIC"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deleteDriver(@RequestParam("driver_NIC") String id){
         driverService.deleteDriver(id);
         return new ResponceUtil(200,"deleted",null);
     }

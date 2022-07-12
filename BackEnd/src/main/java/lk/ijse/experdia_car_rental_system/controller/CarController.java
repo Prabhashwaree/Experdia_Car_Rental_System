@@ -18,7 +18,7 @@ public class CarController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil saveCar(@ModelAttribute CarDTO carDTO){
+    public ResponceUtil saveCar(@RequestBody CarDTO carDTO){
         carService.saveCar(carDTO);
         return new ResponceUtil(200,"save",null);
     }
@@ -28,8 +28,8 @@ public class CarController {
         return  new ResponceUtil(200,"getAll",carService.getAllCar());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deleteCar(@RequestParam String id){
+    @DeleteMapping(params = {"register_No"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deleteCar(@RequestParam("register_No") String id){
         carService.deleteCar(id);
         return new ResponceUtil(200,"deleted",null);
     }

@@ -23,7 +23,16 @@ public class PaymentRepoTest {
 
     @Test
     public void savePayment(){
-        Payment payment1 = new Payment("P001", "2022-07-08", "4.00", "400", "1500", "1100", "confirm", 4000);
+        Payment payment1 = new Payment(
+                "P001",
+                "2022-07-08",
+                "4.00",
+                "400",
+                "1500",
+                "1100",
+                "confirm",
+                4000
+        );
         Payment payment2 = new Payment("P002", "2022-07-09", "4.00", "400", "1500", "1100", "cancle", 4000);
         paymentRepo.save(payment1);
         paymentRepo.save(payment2);

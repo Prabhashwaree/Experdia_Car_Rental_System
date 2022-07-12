@@ -18,7 +18,7 @@ public class AdminController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil saveAdmin(@ModelAttribute AdminDTO adminDTO){
+    public ResponceUtil saveAdmin(@RequestBody AdminDTO adminDTO){
         adminService.saveAdmin(adminDTO);
         return new ResponceUtil(200,"save",null);
     }
@@ -28,8 +28,8 @@ public class AdminController {
         return  new ResponceUtil(200,"getAll",adminService.getAllAdmin());
     }
 
-    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponceUtil deleteAdmin(@RequestParam String id){
+    @DeleteMapping(params = {"admin_Id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponceUtil deleteAdmin(@RequestParam("admin_Id") String id){
         adminService.deleteAdmin(id);
         return new ResponceUtil(200,"deleted",null);
     }

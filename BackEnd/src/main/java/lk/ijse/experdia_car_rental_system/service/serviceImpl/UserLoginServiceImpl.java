@@ -7,6 +7,7 @@ import lk.ijse.experdia_car_rental_system.service.UserLoginService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,13 +23,18 @@ public class UserLoginServiceImpl implements UserLoginService {
     @Autowired
     ModelMapper modelMapper;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Override
     public void saveUserLogin(UserLoginDTO userLoginDTO) {
-        if(!userLoginRepo.existsById(userLoginDTO.getUser_Id())){
-            userLoginRepo.save(modelMapper.map(userLoginDTO, UserLogin.class));
-        }else {
-            throw new RuntimeException("User Already Exist..!");
-        }
+        UserLogin userLogin = new UserLogin();
+        userLogin.setUser_Id(userLoginDTO.getUser_Id());
+        userLogin.setType(userLoginDTO.getType());
+        userLogin.setUser_Name(userLoginDTO.getUser_Name());
+        userLogin.setPassword(passwordEncoder.encode(userLoginDTO.getPassword()));
+
+        userLoginRepo.save(userLogin);
     }
 
     @Override
